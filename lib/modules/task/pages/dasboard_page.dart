@@ -81,11 +81,11 @@ class DasboardPage extends StatelessWidget {
     return Row(
       children: [
         Container(
-          height: height * 0.03, 
-          width: width * 0.06,
+          height: 20, 
+          width: 20,
           decoration: BoxDecoration(
             color:color,
-            borderRadius: BorderRadius.circular(30))
+            borderRadius: BorderRadius.circular(100))
           ),
         SizedBox(width: 20),
         Text("Todo 24%")

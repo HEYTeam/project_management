@@ -16,7 +16,7 @@ class SignUpPage extends StatelessWidget {
               child: ConstrainedBox(
                 constraints: BoxConstraints(maxHeight: size.maxHeight),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: size.maxWidth * 0.04, vertical: size.maxHeight * 0.1),
+                  padding: EdgeInsets.symmetric(horizontal: size.maxWidth * 0.04, vertical: size.maxHeight * 0.01),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

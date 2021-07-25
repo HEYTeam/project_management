@@ -90,11 +90,11 @@ class _ProjectDetailPageState extends State<ProjectDetailPage> {
                           Task task = widget.project.tasks[index];
                           return Padding(
                             padding: const EdgeInsets.all(2.0),
-                            child: isMessage ? MessageWidget(message: widget.project.messages[index],uid: "01",) : GestureDetector(
+                            child: isMessage ? MessageWidget(message: widget.project.messages[index],uid: "01",users: widget.project.member,) : GestureDetector(
                               onTap: (){
                                 Navigator.pushNamed(context,'/task_detail_page',arguments: {'task':task, 'project':widget.project});
                               },
-                            child: TaskWidget(task: task, height: height * 0.1)),
+                            child: TaskWidget(task: task, height: height * 0.15)),
                           );
                         },
                       ),
@@ -113,16 +113,20 @@ class _ProjectDetailPageState extends State<ProjectDetailPage> {
   Widget members(){
     return Container(
       height: 50,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: widget.project.member.map((e) => Padding(
-          padding: const EdgeInsets.all(2.0),
-          child: CircleAvatar(
-              radius: 20,
-              backgroundColor: Colors.orange
-            ),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: widget.project.member.map((e) => Padding(
+            padding: const EdgeInsets.all(2.0),
+            child: CircleAvatar(
+                radius: 20,
+                backgroundColor: Colors.orange,
+                backgroundImage: AssetImage(e.image),
+              ),
+          ),
+          ).toList()
         ),
-        ).toList()
       ),
     );
   }

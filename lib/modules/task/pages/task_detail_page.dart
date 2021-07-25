@@ -93,7 +93,7 @@ class TaskDetailPage extends StatelessWidget {
                         child: ListView.builder(
                           itemCount: task.messages.length,
                           itemBuilder: (context, index) {
-                            return MessageWidget(message: task.messages[index],uid: "01",);
+                            return MessageWidget(message: task.messages[index],uid: "01",users: task.member,);
                           },
                         ),
                       )

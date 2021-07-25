@@ -24,7 +24,7 @@ class CardItemProject extends StatelessWidget {
             borderRadius: BorderRadius.circular(10)
           ),
           padding: EdgeInsets.symmetric(horizontal: 25,vertical: 10),
-          height: height * 0.2,
+          height: height * 0.25,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
