@@ -53,7 +53,8 @@ class _MyHomePageState extends State<MyHomePage>  with WidgetsBindingObserver{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Project Management',
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: context.select((ThemeCubit themeCubit) => themeCubit.state.themeMode),

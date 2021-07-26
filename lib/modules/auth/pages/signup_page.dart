@@ -13,10 +13,8 @@ class SignUpPage extends StatelessWidget {
         child: LayoutBuilder(
           builder: (context, size) {
             return SingleChildScrollView(
-              child: ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: size.maxHeight),
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: size.maxWidth * 0.04, vertical: size.maxHeight * 0.01),
+              child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: size.maxWidth * 0.04, vertical: size.maxHeight * 0.03),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -58,13 +56,14 @@ class SignUpPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Flexible(child: Text("Have don't you account ? ", overflow: TextOverflow.ellipsis,)),
-                          TextButton(onPressed: (){}, child: Text("Sign Up"))
+                          TextButton(onPressed: (){
+                            Navigator.pushNamed(context, '/signin');
+                          }, child: Text("Sign Up"))
                         ],
                       ),
                     ],
                   ),
                 ),
-              )
             );
           },
         ),

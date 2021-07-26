@@ -56,7 +56,7 @@ class MessageWidget extends StatelessWidget {
           children: [
             CircleAvatar(
               backgroundColor: Colors.green,
-              backgroundImage: AssetImage(user!.image),
+              backgroundImage: AssetImage(user.image),
             ),
             SizedBox(width: width  * 0.04,),
             Expanded(
