@@ -74,9 +74,9 @@ class SignInPage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          buttonWith(icon: Icons.ac_unit_outlined,name: "Google"),
+                          buttonWith(icon: "google.png",name: "Google"),
                           SizedBox(width: size.maxWidth * 0.2),
-                          buttonWith(icon:Icons.ac_unit_sharp, name:"Facebook"),
+                          buttonWith(icon:"facebook.png", name:"Facebook"),
                         ],
                       )
                     ],
@@ -90,13 +90,14 @@ class SignInPage extends StatelessWidget {
   }
 
 
-  Row buttonWith({required IconData icon, required String name}){
+  Row buttonWith({required String icon, required String name}){
     return Row(
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(40),
-          child: IconButton(onPressed: (){}, icon: Icon(icon)),
+          child: Image.asset('assets/images/2.0x/${icon}',height: 30,width: 30,),//IconButton(onPressed: (){}, icon: Icon(icon)),
         ),
+        SizedBox(width: 3,),
         Text(name)
       ],
     );
