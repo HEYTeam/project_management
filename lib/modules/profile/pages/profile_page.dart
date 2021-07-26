@@ -77,7 +77,7 @@ class ProfilePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        taskComplete(count: "20",title: "Complete",flex: 3),
+                        taskComplete(count: "4",title: "Project",flex: 3),
                       ],
                     ),
                     SizedBox(height: 10,),
@@ -130,7 +130,7 @@ class ProfilePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(count),
+          Text(count, style:TextStyle(color: kColorsBlue,fontWeight: FontWeight.bold)),
           Text(title)
         ],
       ),
