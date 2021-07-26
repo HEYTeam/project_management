@@ -53,7 +53,7 @@ Message ms4 = new Message(uid: "01",userName: "Nguyễn Văn Toán",date: DateTi
 Message ms5 = new Message(uid: "05",userName: "Thanh Hải",date: DateTime.now(),message: "The Flutter library for calling the API of Bitkub.com such as viewing prices and trading in cryptocurrency.",idProfile: "01");
 
 
-Task task1 = new Task(name: "Design UI",description: "Design UI login",isState: false,startDate: DateTime.now(),endDate: DateTime.now().add(Duration(days: 2)),messages: [ms1, ms2, ms3],member: [user1,user3],label: label2);
+Task task1 = new Task(name: "Design UI",description: "Design UI login",isState: true,startDate: DateTime.now(),endDate: DateTime.now().add(Duration(days: 2)),messages: [ms1, ms2, ms3],member: [user1,user3],label: label2);
 Task task2 = new Task(name: "Design UI",description: "Design UI login",isState: false,startDate: DateTime.now(),endDate: DateTime.now().add(Duration(days: 2)),messages: [ms4,ms2, ms3],member: [user1,user5],label: label1);
 Task task3 = new Task(name: "Design UI",description: "Design UI login",isState: false,startDate: DateTime.now(),endDate: DateTime.now().add(Duration(days: 2)),messages: [ms5,ms2,ms4],member: [user1,user2],label: label4);
 Task task4 = new Task(name: "Design UI",description: "Design UI login",isState: false,startDate: DateTime.now(),endDate: DateTime.now().add(Duration(days: 2)),messages: [ms3,ms2,ms4],member: [user1,user5],label: label5);

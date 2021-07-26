@@ -97,6 +97,7 @@ class ProfilePage extends StatelessWidget {
                         ...menu(itemPart2,size.maxWidth),
                         SizedBox(height: size.maxHeight * 0.05,),
                         ...menu(itemPart3,size.maxWidth),
+                        SizedBox(height: size.maxHeight * 0.1,),
                     ],
                   ),
                 )

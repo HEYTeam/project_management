@@ -11,10 +11,8 @@ class SignInPage extends StatelessWidget {
         child: LayoutBuilder(
           builder: (context, size) {
             return SingleChildScrollView(
-              child: ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: size.maxHeight),
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: size.maxWidth * 0.04, vertical: size.maxHeight * 0.1),
+              child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: size.maxWidth * 0.04, vertical: size.maxHeight * 0.03),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -84,7 +82,6 @@ class SignInPage extends StatelessWidget {
                     ],
                   ),
                 ),
-              )
             );
           },
         ),

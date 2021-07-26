@@ -76,5 +76,4 @@ class ReportPage extends StatelessWidget {
       ),
     );
   }
-
 }

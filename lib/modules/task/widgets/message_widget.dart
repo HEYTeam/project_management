@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:manager_app/logic/colors.dart';
 import 'package:manager_app/models/message.dart';
+import 'package:manager_app/models/user.dart';
 import 'package:manager_app/widgets/dialog_widget.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
@@ -13,14 +14,16 @@ enum ModelMS{
 }
 
 class MessageWidget extends StatelessWidget {
-  const MessageWidget({Key? key,required this.message, required this.uid}) : super(key: key);
+  const MessageWidget({Key? key,required this.message, required this.uid,required this.users}) : super(key: key);
   final Message message;
   final String uid;
+  final List<User> users;
   @override
   Widget build(BuildContext context) {
     final messageController = TextEditingController();
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+    final user = users.firstWhereOrNull((element) => element.id == message.uid);
 
     showDialog(ModelMS model){
       DialogWidget(
@@ -47,12 +50,13 @@ class MessageWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(8),
       child: 
-        Row(
+        user != null ? Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           //mainAxisAlignment: MainAxisAlignment.start,
           children: [
             CircleAvatar(
               backgroundColor: Colors.green,
+              backgroundImage: AssetImage(user.image),
             ),
             SizedBox(width: width  * 0.04,),
             Expanded(
@@ -99,7 +103,16 @@ class MessageWidget extends StatelessWidget {
               ),
             ),
           ],
-        )
+        ) : SizedBox(height: 0 ,width: 0,)
     );
+  }
+}
+
+extension MyIterable<T> on Iterable<T> {
+  //T? get firstOrNull => isEmpty ? null : first;
+
+  T? firstWhereOrNull(bool Function(T element) test) {
+    final list = where(test);
+    return list.isEmpty ? null : list.first;
   }
 }

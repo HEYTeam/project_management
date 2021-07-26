@@ -34,6 +34,7 @@ class _ListViewMemberWidgetState extends State<ListViewMemberWidget> {
             trailing: widget.task.member.where((task) => task.id == widget.project.member[index].id).length != 0 ? widget.trailing : Text(""),
             avatar: AvatarWidget(
               radius: 20,
+              image: widget.project.member[index].image,
             ), 
             title: widget.project.member[index].name);
         },

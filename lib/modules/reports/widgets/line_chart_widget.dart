@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:manager_app/logic/colors.dart';
 
 class LineChartWidget extends StatefulWidget {
   @override
@@ -39,19 +40,26 @@ class LineChartWidgetState extends State<LineChartWidget> {
                 const SizedBox(
                   height: 37,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      'Weekly',
+                Container(
+                  alignment: Alignment.center,
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton(
+                      menuMaxHeight: 150,
                       style: TextStyle(
-                        color: Color(0xff827daa),
+                        color: kColorsGrey,
                         fontSize: 16,
                       ),
-                      textAlign: TextAlign.center,
+                      icon: Icon(Icons.arrow_drop_down, color: Colors.white),
+                      items: [
+                        DropdownMenuItem(value: 1,child: Text("Weekly", style: TextStyle(color: Colors.black),)),
+                        DropdownMenuItem(value: 2,child: Text("Weekly")),
+                      ],
+                      value: 1,
+                      onChanged: (value){
+                  
+                      },
                     ),
-                    Icon(Icons.arrow_drop_down)
-                  ],
+                  ),
                 ),
                 const SizedBox(
                   height: 4,

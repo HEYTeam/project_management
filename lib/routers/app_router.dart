@@ -19,6 +19,7 @@ class AppRouter{
       case '/': return MaterialPageRoute(builder: (context) => SignInPage(),);
       case '/signup':return MaterialPageRoute(builder: (context) => SignUpPage());
       case '/home': return MaterialPageRoute(builder: (context) => HomePage());
+      case '/signin': return MaterialPageRoute(builder: (context) => SignInPage());
       case '/project_detail': 
         Project project = arg as Project;
         return MaterialPageRoute(builder: (context) => ProjectDetailPage(project: project,));

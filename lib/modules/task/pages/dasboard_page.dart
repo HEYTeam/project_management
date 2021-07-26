@@ -1,10 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:manager_app/logic/colors.dart';
-import 'package:manager_app/logic/data.dart';
 import 'package:manager_app/models/project.dart';
 import 'package:manager_app/modules/task/widgets/card_item_project.dart';
-import '../../../logic/data.dart';
 class DasboardPage extends StatelessWidget {
   const DasboardPage({Key? key, required this.projectList}) : super(key: key);
   final List<Project> projectList;
@@ -46,12 +44,13 @@ class DasboardPage extends StatelessWidget {
                         ),
                         Container(
                           height: 200,
+                          width: width * 0.3,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              indicate(height,width,"To do", kColorsGreen),
+                              indicate(height,width,"Done", kColorsGreen),
                               indicate(height,width,"To do", kColorsOrange),
-                              indicate(height,width,"To do",kColorsGrey),
+                              indicate(height,width,"Pending",kColorsGrey),
                             ],
                           ),
                         )
@@ -79,16 +78,17 @@ class DasboardPage extends StatelessWidget {
 
   Row indicate(double height, double width,String note, Color? color){
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: height * 0.03, 
-          width: width * 0.06,
+          height: 20, 
+          width: 20,
           decoration: BoxDecoration(
             color:color,
-            borderRadius: BorderRadius.circular(30))
+            borderRadius: BorderRadius.circular(100))
           ),
         SizedBox(width: 20),
-        Text("Todo 24%")
+        Text(note)
       ],
     );
   }

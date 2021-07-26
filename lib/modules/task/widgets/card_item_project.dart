@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:manager_app/logic/colors.dart';
 import 'package:manager_app/models/project.dart';
-import 'package:manager_app/widgets/avatar_widget.dart';
 import 'package:manager_app/widgets/team_widget.dart';
 
 
 class CardItemProject extends StatelessWidget {
-  const CardItemProject({Key? key, required this.height, required this.project, required this.width}) : super(key: key);
+  CardItemProject({Key? key, required this.height, required this.project, required this.width}) : super(key: key);
   final double height;
   final Project project;
   final double width;
+
+  taskDone (){
+    double total = 0;
+    project.tasks.forEach((task) { 
+      if(task.isState){
+        total = total + 1;
+      }
+    });
+    return ((total * 100)/project.tasks.length)/100;
+  }
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -24,7 +33,7 @@ class CardItemProject extends StatelessWidget {
             borderRadius: BorderRadius.circular(10)
           ),
           padding: EdgeInsets.symmetric(horizontal: 25,vertical: 10),
-          height: height * 0.2,
+          height: height * 0.25,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,7 +72,7 @@ class CardItemProject extends StatelessWidget {
               Stack(
                 children: [
                   LinearProgressIndicator(minHeight: 5,value: 1,color: kColorsGrey,),
-                  LinearProgressIndicator(minHeight: 5,value: 0.2,color:kColorsGreen,),
+                  LinearProgressIndicator(minHeight: 5,value: taskDone(),color:kColorsGreen,),
                 ],
               ),
               Expanded(
