@@ -89,7 +89,4 @@ class CardItemProject extends StatelessWidget {
       ),
     );
   }
-
-  
-
 }
