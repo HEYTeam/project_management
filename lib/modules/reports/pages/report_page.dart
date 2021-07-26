@@ -9,6 +9,15 @@ import 'package:manager_app/modules/reports/widgets/bar_chart_widget.dart';
 class ReportPage extends StatelessWidget {
   const ReportPage({Key? key}) : super(key: key);
 
+
+  showCalender(BuildContext context){
+    showDatePicker(
+      context: context, 
+      initialDate:DateTime.now(), 
+      firstDate: DateTime.now().subtract(Duration(days: 30)), lastDate: DateTime.now(),
+    ).then((value) => print(value));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +30,9 @@ class ReportPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text("Task Overview", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
-              IconButton(onPressed: (){}, icon: Icon(Icons.calendar_today))
+              IconButton(onPressed: (){
+                showCalender(context);
+              }, icon: Icon(Icons.calendar_today))
             ],
           ),
           Expanded(
